@@ -147,6 +147,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\core\game-core.cpp" />
+    <ClCompile Include="src\graphics\renderer.cpp" />
+    <ClCompile Include="src\input\mouse.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\scenes\scenes-runner.cpp" />
     <ClCompile Include="src\windows\window.cpp" />
@@ -160,6 +162,7 @@
     <ClInclude Include="src\core\game-core.hpp" />
     <ClInclude Include="src\graphics\renderer.hpp" />
     <ClInclude Include="src\helpers\c-api-resource.hpp" />
+    <ClInclude Include="src\input\mouse.hpp" />
     <ClInclude Include="src\scenes\scene.hpp" />
     <ClInclude Include="src\scenes\scenes-manager.hpp" />
     <ClInclude Include="src\scenes\scenes-runner.hpp" />
