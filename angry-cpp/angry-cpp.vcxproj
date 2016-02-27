@@ -160,9 +160,11 @@
     <ClInclude Include="dep\catch\catch.hpp" />
     <ClInclude Include="dep\catch\run-tests.hpp" />
     <ClInclude Include="src\core\game-core.hpp" />
+    <ClInclude Include="src\graphics\color.hpp" />
     <ClInclude Include="src\graphics\renderer.hpp" />
     <ClInclude Include="src\helpers\c-api-resource.hpp" />
     <ClInclude Include="src\input\mouse.hpp" />
+    <ClInclude Include="src\math\shapes\rect.hpp" />
     <ClInclude Include="src\scenes\scene.hpp" />
     <ClInclude Include="src\scenes\scenes-manager.hpp" />
     <ClInclude Include="src\scenes\scenes-runner.hpp" />
