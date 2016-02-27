@@ -3,20 +3,27 @@
 #include "core/game-core.hpp"
 #include "windows/window.hpp"
 
+#include "math/shapes/rect.hpp"
 #include "scenes/scene.hpp"
 #include "scenes/scenes-manager.hpp"
 #include "scenes/scenes-runner.hpp"
 #include "input/mouse.hpp"
 
+#include "graphics/color.hpp"
+
 struct empty_scene: public angrycpp::scene {
     virtual void init() override {};
     virtual void update() override {};
     virtual void draw(angrycpp::graphics::renderer &renderer) override {
-        int x, y, width = 50, height = 50;
-        std::tie(x, y) = angrycpp::input::mouse::pos();
+        int width = 50, height = 50;
+        auto mouse = angrycpp::input::mouse::get();
 
-        renderer.begin(SDL_Color{ 0, 0, 0 });
-        renderer.draw(SDL_Rect{ x-width, y-height, width*2, height*2 }, SDL_Color{ 255, 255, 255 });
+        renderer.begin(angrycpp::color{ 0, 0, 0 });
+        if(mouse.button_pressed.left) {
+            renderer.draw(
+                angrycpp::rect{ mouse.x - width, mouse.y - height, width * 2, height * 2 },
+                angrycpp::color{ 255, 255, 255 });
+        }
         renderer.end();
     };
     virtual void finish() override {};
