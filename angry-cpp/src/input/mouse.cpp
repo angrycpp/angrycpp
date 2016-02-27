@@ -4,18 +4,16 @@
 
 namespace angrycpp {
 
-input::mouse::pos_t input::mouse::pos() {
+input::mouse::data input::mouse::get() {
     int x, y;
-    SDL_GetMouseState(&x, &y);
-    return std::make_tuple(x, y);
-}
-
-int input::mouse::x() {
-    return std::get<0>(pos());
-}
-
-int input::mouse::y() {
-    return std::get<1>(pos());
+    Uint32 state = SDL_GetMouseState(&x, &y);
+    return data{
+        x, y, {
+            (state & SDL_BUTTON(1)) != 0,
+            (state & SDL_BUTTON(2)) != 0,
+            (state & SDL_BUTTON(3)) != 0
+        }
+    };
 }
 
 }

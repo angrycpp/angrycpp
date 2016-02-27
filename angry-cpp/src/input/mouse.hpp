@@ -8,13 +8,14 @@ namespace input {
 
 namespace mouse {
 
-using pos_t = std::tuple<int, int>;
+struct data {
+    int x, y;
+    struct button_pressed_t {
+        bool left, middle, right;
+    } button_pressed;
+};
 
-pos_t pos();
-
-int x();
-int y();
-
+data get();
 
 }
 
