@@ -5,7 +5,7 @@ namespace angrycpp {
 namespace graphics {
 
 renderer::renderer(angrycpp::window &window) {
-    auto ptr = SDL_CreateRenderer(window.handle.get(), -1, SDL_RENDERER_ACCELERATED);
+    auto ptr = SDL_CreateRenderer(window.handle.get(), -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
     handle.reset(ptr);
 }
 
